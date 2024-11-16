@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-demo
+  namespace: backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: express-demo
+  template:
+    metadata:
+      labels:
+        app: express-demo
+    spec:
+      containers:
+      - name: express-demo
+        image: hiremostafa/express-demo:1.0.1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3006
