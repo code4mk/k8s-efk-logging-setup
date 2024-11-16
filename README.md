@@ -79,3 +79,11 @@ $ kubectl get secrets --namespace=logging elasticsearch-master-credentials -ojso
 ```
 
 * `username is elastic`
+
+# sample project deploy
+
+```bash
+kubectl create namespace backend
+kubectl apply -f project.yml
+```
+
