@@ -69,8 +69,9 @@ helm install fluent-bit fluent/fluent-bit -f fluentbit/values.yaml -n logging
 ## Accessing Kibana
 
 ```bash
-kubectl port-forward service/kibana-service 5601:5601
+kubectl port-forward svc/kibana-kibana 5601:5601 -n logging
 ```
+* `http://localhost:5601`
 
 * get the elastic user's password
 
@@ -78,7 +79,7 @@ kubectl port-forward service/kibana-service 5601:5601
 $ kubectl get secrets --namespace=logging elasticsearch-master-credentials -ojsonpath='{.data.password}' | base64 -d
 ```
 
-* `username is elastic`
+* `username` is `elastic`
 
 # sample project deploy
 
@@ -87,3 +88,11 @@ kubectl create namespace backend
 kubectl apply -f project.yml
 ```
 
+---
+<div align="center">
+  
+💼 **Need DevOps expertise?**  
+📧 [hiremostafa@gmail.com](mailto:hiremostafa@gmail.com)  
+🚀 Available for hire
+  
+</div>
